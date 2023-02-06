@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zyger</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="../style.css">
+
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- Sidebar -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>Zyger</h3>
+            </div>
+
+            <ul class="list-unstyled components">
+                <li>
+                    <p>Services</p>
+                    <a href="/">Home</a>
+                </li>
+                <li>
+                    <a href="/verify.html">Verify</a>
+                </li>
+                <li>
+                    <a href="#middlemanSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Middleman</a>
+                    <ul class="collapse list-unstyled" id="middlemanSubmenu">
+                        <li class="active">
+                            <a href="/middleman/log.html">Log</a>
+                        </li>
+                        <li>
+                            <a href="/middleman/calculator.html">Calculator</a>
+                        </li>
+                        <li>
+                            <a href="/middleman/2fa.html">2FA</a>
+                        </li>
+                        <li>
+                            <a href="/middleman/exploit.html">Exploit</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#domainsSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Domains</a>
+                    <ul class="collapse list-unstyled" id="domainsSubmenu">
+                        <li>
+                            <a href="/domains/list.html">List</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/contact.html">Contact</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Page Content -->
+        
+        <div id="content">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                    <button type="button" id="sidebarCollapse" class="btn btn-info">
+                       <span>Toggle Sidebar</span>
+                    </button>
+                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <svg class="svg-inline--fa fa-align-justify fa-w-14" aria-hidden="true" data-prefix="fas" data-icon="align-justify" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M0 84V44c0-8.837 7.163-16 16-16h416c8.837 0 16 7.163 16 16v40c0 8.837-7.163 16-16 16H16c-8.837 0-16-7.163-16-16zm16 144h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 256h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0-128h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"></path></svg><!-- <i class="fas fa-align-justify" aria-hidden="true"></i> -->
+                    </button>
+                </div>
+            </nav>
+            <div class="container mt-5">
+                <!-- Your page content goes here -->
+                <h2>Middleman Log</h2>
+                <p id="stats">I have handled a total of $6,739,114.53 USD across 5,464 different deals.<br>My largest deal to date is $73,000 USD.<br>My average deal is $1,233.37 USD.<br></p>
+
+                <p>I only middleman deals in my discord server below.</p>
+                <a href="https://discord.gg/pksarkfB" target="_blank" role="button" class="btn btn-primary"><i class="fab fa-discord" aria-hidden="true"></i> Join Server</a>
+                <div class = "line" ></div>
+                <p style ="color: #000";></p>
+                <form method="POST" id="records">
+                    <input id="record_id" name="id" type="hidden" value="">
+                    <table id="records" class="table table-striped responsive-table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Deal ID</th>
+                                <th scope="col">Site</th>
+                                <th scope="col">Seller ID</th>
+                                <th scope="col">Buyer ID</th>
+                                <th scope="col" class="date-width">Date</th>
+                                <th scope="col">Deal Value</th>
+                                <th scope="col">Description</th>
+                                                        </tr>
+                        </thead>
+                        <tbody>
+                            <tr id="5474">
+                              <th scope="row">5474</th>
+                              <td>Discord</td>
+                              <td>96763*********4004</td>
+                              <td>55414*********5972</td>
+                              <td style="white-space: nowrap;">12 Jan 2023</td>
+                              <td>$250.00 USD</td>
+                              <td>Hypixel Stats Account</td>
+                            </tr>
+                            <tr id="5473">
+                              <th scope="row">5473</th>
+                              <td>Discord</td>
+                              <td>46431*********1858</td>
+                              <td>79713*********4882</td>
+                              <td style="white-space: nowrap;">12 Jan 2023</td>
+                              <td>$350.00 USD</td>
+                              <td>Hypixel Stats Account</td>
+                            </tr>
+                            <tr id="5472">
+                              <th scope="row">5472</th>
+                              <td>Discord</td>
+                              <td>10531*********19773</td>
+                              <td>10342*********04262</td>
+                              <td style="white-space: nowrap;">12 Jan 2023</td>
+                              <td>$700.00 USD</td>
+                              <td>2011 Cape</td>
+                            </tr>
+                            <tr id="5471">
+                              <th scope="row">5471</th>
+                              <td>Discord</td>
+                              <td>49320*********3572</td>
+                              <td>45863*********7569</td>
+                              <td style="white-space: nowrap;">12 Jan 2023</td>
+                              <td>$800.00 USD</td>
+                              <td>MC "Se****ty"</td>
+                            </tr>
+                            <tr id="5470">
+                              <th scope="row">5470</th>
+                              <td>Discord</td>
+                              <td>82439*********6192</td>
+                              <td>81204*********2018</td>
+                              <td style="white-space: nowrap;">12 Jan 2023</td>
+                              <td>$347.00 USD</td>
+                              <td>2016 Cape</td>
+                            </tr>
+                            <tr id="5469">
+                              <th scope="row">5469</th>
+                              <td>Discord</td>
+                              <td>81477*********1499</td>
+                              <td>16187*********6432</td>
+                              <td style="white-space: nowrap;">12 Jan 2023</td>
+                              <td>$900.00 USD</td>
+                              <td>2012 Cape</td>
+                            </tr>
+                            <tr id="5468">
+                              <th scope="row">5468</th>
+                              <td>Discord</td>
+                              <td>10561*********07454</td>
+                              <td>10559*********53984</td>
+                              <td style="white-space: nowrap;">12 Jan 2023</td>
+                              <td>$1,400.00 USD</td>
+                              <td>MC "Le***er"</td>
+                            </tr>
+                            <tr id="5467">
+                              <th scope="row">5467</th>
+                              <td>Discord</td>
+                              <td>16187*********6432</td>
+                              <td>71872*********6107</td>
+                              <td style="white-space: nowrap;">11 Jan 2023</td>
+                              <td>$1,000.00 USD</td>
+                              <td>2013 Cape, 2x 2016 Cape</td>
+                            </tr>
+                            <tr id="5466">
+                              <th scope="row">5466</th>
+                              <td>Discord</td>
+                              <td>10389*********65650</td>
+                              <td>10540*********37757</td>
+                              <td style="white-space: nowrap;">11 Jan 2023</td>
+                              <td>$430.00 USD</td>
+                              <td>2013 Cape</td>
+                            </tr>
+                            <tr id="5465">
+                              <th scope="row">5465</th>
+                              <td>Discord</td>
+                              <td>27787*********4976</td>
+                              <td>10425*********04682</td>
+                              <td style="white-space: nowrap;">11 Jan 2023</td>
+                              <td>$300.00 USD</td>
+                              <td>2016 Cape</td>
+                            </tr>
+                            <tr id="5464">
+                              <th scope="row">5464</th>
+                              <td>Discord</td>
+                              <td>75784*********6443</td>
+                              <td>68572*********2351</td>
+                              <td style="white-space: nowrap;">11 Jan 2023</td>
+                              <td>$200.00 USD</td>
+                              <td>Hypixel Stats Account</td>
+                            </tr>
+                            <tr id="5463">
+                              <th scope="row">5463</th>
+                              <td>Discord</td>
+                              <td>77112*********0431</td>
+                              <td>10403*********42996</td>
+                              <td style="white-space: nowrap;">11 Jan 2023</td>
+                              <td>$17,000.00 USD</td>
+                              <td>Special Cape</td>
+                            </tr>
+                            <tr id="5462">
+                              <th scope="row">5462</th>
+                              <td>Discord</td>
+                              <td>16187*********6432</td>
+                              <td>42093*********0848</td>
+                              <td style="white-space: nowrap;">11 Jan 2023</td>
+                              <td>$400.00 USD</td>
+                              <td>2011 Cape</td>
+                            </tr>
+                            <tr id="5461">
+                              <th scope="row">5461</th>
+                              <td>Discord</td>
+                              <td>14286*********4144</td>
+                              <td>72746*********3727</td>
+                              <td style="white-space: nowrap;">10 Jan 2023</td>
+                              <td>$675.00 USD</td>
+                              <td>MC "Em***r", "Fi***on" &amp; "Simisear"</td>
+                            </tr>
+                            <tr id="5460">
+                              <th scope="row">5460</th>
+                              <td>Discord</td>
+                              <td>80994*********2848</td>
+                              <td>10222*********90804</td>
+                              <td style="white-space: nowrap;">10 Jan 2023</td>
+                              <td>$200.00 USD</td>
+                              <td>MC "L**ia"</td>
+                            </tr>
+                            <tr id="5459">
+                              <th scope="row">5459</th>
+                              <td>Discord</td>
+                              <td>97941*********0084</td>
+                              <td>10566*********37854</td>
+                              <td style="white-space: nowrap;">10 Jan 2023</td>
+                              <td>$570.00 USD</td>
+                              <td>Hypixel Stats Account</td>
+                            </tr>
+                            <tr id="5458">
+                              <th scope="row">5458</th>
+                              <td>Discord</td>
+                              <td>59384*********5026</td>
+                              <td>49320*********3572</td>
+                              <td style="white-space: nowrap;">10 Jan 2023</td>
+                              <td>$70.00 USD</td>
+                              <td>MC "***"</td>
+                            </tr>
+                            <tr id="5457">
+                              <th scope="row">5457</th>
+                              <td>Discord</td>
+                              <td>85495*********7652</td>
+                              <td>39544*********9474</td>
+                              <td style="white-space: nowrap;">10 Jan 2023</td>
+                              <td>$530.00 USD</td>
+                              <td>Hypixel Stats Account</td>
+                            </tr>
+                            <tr id="5456">
+                              <th scope="row">5456</th>
+                              <td>Discord</td>
+                              <td>87658*********3994</td>
+                              <td>10566*********56473</td>
+                              <td style="white-space: nowrap;">10 Jan 2023</td>
+                              <td>$1,000.00 USD</td>
+                              <td>Hypixel Stats Account</td>
+                            </tr>
+                            <tr id="5455">
+                              <th scope="row">5455</th>
+                              <td>Discord</td>
+                              <td>10562*********37652</td>
+                              <td>87372*********4031</td>
+                              <td style="white-space: nowrap;">10 Jan 2023</td>
+                              <td>$190.00 USD</td>
+                              <td>Hypixel Stats Account</td>
+                            </tr>
+                            <tr id="5454">
+                              <th scope="row">5454</th>
+                              <td>Discord</td>
+                              <td>10397*********40191</td>
+                              <td>10514*********90940</td>
+                              <td style="white-space: nowrap;">10 Jan 2023</td>
+                              <td>$1,100.00 USD</td>
+                              <td>MC "G**w"</td>
+                            </tr>
+                            <tr id="5453">
+                              <th scope="row">5453</th>
+                              <td>Discord</td>
+                              <td>38952*********8386</td>
+                              <td>95090*********1159</td>
+                              <td style="white-space: nowrap;">10 Jan 2023</td>
+                              <td>$125.00 USD</td>
+                              <td>2x Hypixel Stats Account</td>
+                            </tr>
+                            <tr id="5452">
+                              <th scope="row">5452</th>
+                              <td>Discord</td>
+                              <td>55873*********9089</td>
+                              <td>28733*********4305</td>
+                              <td style="white-space: nowrap;">10 Jan 2023</td>
+                              <td>$600.00 USD</td>
+                              <td>Hypixel Stats Account</td>
+                            </tr>
+                            <tr id="5451">
+                              <th scope="row">5451</th>
+                              <td>Discord</td>
+                              <td>10566*********56473</td>
+                              <td>10189*********10046</td>
+                              <td style="white-space: nowrap;">10 Jan 2023</td>
+                              <td>$940.00 USD</td>
+                              <td>Hypixel Stats Account</td>
+                            </tr>
+                            <tr id="5450">
+                              <th scope="row">5450</th>
+                              <td>Discord</td>
+                              <td>16187*********6432</td>
+                              <td>10151*********50078</td>
+                              <td style="white-space: nowrap;">10 Jan 2023</td>
+                              <td>$400.00 USD</td>
+                              <td>2016 Cape</td>
+                            </tr>
+                            <tr id="5449">
+                              <th scope="row">5449</th>
+                              <td>Discord</td>
+                              <td>10563*********44665</td>
+                              <td>10425*********04682</td>
+                              <td style="white-space: nowrap;">10 Jan 2023</td>
+                              <td>$325.00 USD</td>
+                              <td>2015 Cape</td>
+                            </tr>
+                            <tr id="5448">
+                              <th scope="row">5448</th>
+                              <td>Discord</td>
+                              <td>N/A</td>
+                              <td>N/A</td>
+                              <td style="white-space: nowrap;">10 Jan 2023</td>
+                              <td>$8,850.00 USD</td>
+                              <td>MC Account</td>
+                            </tr>
+                            <tr id="5447">
+                              <th scope="row">5447</th>
+                              <td>Discord</td>
+                              <td>93659*********5956</td>
+                              <td>87880*********1648</td>
+                              <td style="white-space: nowrap;">10 Jan 2023</td>
+                              <td>$150.00 USD</td>
+                              <td>Hypixel Stats Account</td>
+                            </tr>
+                            <tr id="5446">
+                              <th scope="row">5446</th>
+                              <td>Discord</td>
+                              <td>10603*********72177</td>
+                              <td>39329*********4416</td>
+                              <td style="white-space: nowrap;">9 Jan 2023</td>
+                              <td>$300.00 USD</td>
+                              <td>2x Hypixel Stats Account</td>
+                            </tr>
+                            <tr id="5445">
+                              <th scope="row">5445</th>
+                              <td>Discord</td>
+                              <td>96431*********7198</td>
+                              <td>10440*********40488</td>
+                              <td style="white-space: nowrap;">9 Jan 2023</td>
+                              <td>$12,750.00 USD</td>
+                              <td>MC "***"</td>
+                            </tr>
+                            <tr id="5444">
+                              <th scope="row">5444</th>
+                              <td>Discord</td>
+                              <td>10599*********32335</td>
+                              <td>85099*********8689</td>
+                              <td style="white-space: nowrap;">9 Jan 2023</td>
+                              <td>$250.00 USD</td>
+                              <td>Domain</td>
+                            </tr>
+                            <tr id="5443">
+                              <th scope="row">5443</th>
+                              <td>Discord</td>
+                              <td>10490*********87672</td>
+                              <td>97186*********1458</td>
+                              <td style="white-space: nowrap;">9 Jan 2023</td>
+                              <td>$1,100.00 USD</td>
+                              <td>MC "T**l"</td>
+                            </tr>
+                            <tr id="5442">
+                              <th scope="row">5442</th>
+                              <td>Discord</td>
+                              <td>10490*********87672</td>
+                              <td>89251*********8774</td>
+                              <td style="white-space: nowrap;">9 Jan 2023</td>
+                              <td>$900.00 USD</td>
+                              <td>MC "Sk***r" for "T**l"</td>
+                            </tr>
+                            <tr id="5441">
+                              <th scope="row">5441</th>
+                              <td>Discord</td>
+                              <td>96288*********7306</td>
+                              <td>10340*********65088</td>
+                              <td style="white-space: nowrap;">9 Jan 2023</td>
+                              <td>$375.00 USD</td>
+                              <td>2013 Cape</td>
+                            </tr>
+                            <tr id="5440">
+                              <th scope="row">5440</th>
+                              <td>Discord</td>
+                              <td>10409*********82685</td>
+                              <td>98370*********4592</td>
+                              <td style="white-space: nowrap;">8 Jan 2023</td>
+                              <td>$470.00 USD</td>
+                              <td>2013 Cape</td>
+                            </tr>
+                            <tr id="5439">
+                              <th scope="row">5439</th>
+                              <td>Discord</td>
+                              <td>N/A</td>
+                              <td>N/A</td>
+                              <td style="white-space: nowrap;">8 Jan 2023</td>
+                              <td>$50.00 USD</td>
+                              <td>MC Account</td>
+                            </tr>
+                            <tr id="5438">
+                              <th scope="row">5438</th>
+                              <td>Discord</td>
+                              <td>76575*********5930</td>
+                              <td>31773*********9162</td>
+                              <td style="white-space: nowrap;">8 Jan 2023</td>
+                              <td>$1,350.00 USD</td>
+                              <td>Special Cape</td>
+                            </tr>
+                            <tr id="5437">
+                              <th scope="row">5437</th>
+                              <td>Discord</td>
+                              <td>65450*********9986</td>
+                              <td>87372*********4031</td>
+                              <td style="white-space: nowrap;">8 Jan 2023</td>
+                              <td>$100.00 USD</td>
+                              <td>Hypixel Stats Account</td>
+                            </tr>
+                            <tr id="5436">
+                              <th scope="row">5436</th>
+                              <td>Discord</td>
+                              <td>76902*********5425</td>
+                              <td>10478*********73745</td>
+                              <td style="white-space: nowrap;">8 Jan 2023</td>
+                              <td>$525.00 USD</td>
+                              <td>MC "D**d"</td>
+                            </tr>
+                            <tr id="5435">
+                              <th scope="row">5435</th>
+                              <td>Discord</td>
+                              <td>53778*********6144</td>
+                              <td>28733*********4305</td>
+                              <td style="white-space: nowrap;">8 Jan 2023</td>
+                              <td>$230.00 USD</td>
+                              <td>Hypixel Stats Account</td>
+                            </tr>
+                            <tr id="5434">
+                              <th scope="row">5434</th>
+                              <td>Discord</td>
+                              <td>96917*********9608</td>
+                              <td>15748*********2112</td>
+                              <td style="white-space: nowrap;">8 Jan 2023</td>
+                              <td>$4,500.00 USD</td>
+                              <td>2012, 2015, 2016 Cape</td>
+                            </tr>
+                            <tr id="5433">
+                              <th scope="row">5433</th>
+                              <td>Discord</td>
+                              <td>10590*********98142</td>
+                              <td>90194*********2186</td>
+                              <td style="white-space: nowrap;">8 Jan 2023</td>
+                              <td>$800.00 USD</td>
+                              <td>2012 Cape &amp; 2015 Cape</td>
+                            </tr>
+                            <tr id="5432">
+                              <th scope="row">5432</th>
+                              <td>Discord</td>
+                              <td>98370*********4592</td>
+                              <td>58420*********9027</td>
+                              <td style="white-space: nowrap;">8 Jan 2023</td>
+                              <td>$1,500.00 USD</td>
+                              <td>Special Cape</td>
+                            </tr>
+                            <tr id="5431">
+                              <th scope="row">5431</th>
+                              <td>Discord</td>
+                              <td>80331*********5538</td>
+                              <td>86117*********8992</td>
+                              <td style="white-space: nowrap;">7 Jan 2023</td>
+                              <td>$180.00 USD</td>
+                              <td>Hypixel Stats Account</td>
+                            </tr>
+                            <tr id="5430">
+                              <th scope="row">5430</th>
+                              <td>Discord</td>
+                              <td>10294*********03018</td>
+                              <td>10524*********55112</td>
+                              <td style="white-space: nowrap;">7 Jan 2023</td>
+                              <td>$2,400.00 USD</td>
+                              <td>MC "Re***ge"</td>
+                            </tr>
+                            <tr id="5429">
+                              <th scope="row">5429</th>
+                              <td>Discord</td>
+                              <td>10167*********72418</td>
+                              <td>10561*********28607</td>
+                              <td style="white-space: nowrap;">7 Jan 2023</td>
+                              <td>$700.00 USD</td>
+                              <td>2016 Cape</td>
+                            </tr>
+                            <tr id="5428">
+                              <th scope="row">5428</th>
+                              <td>Discord</td>
+                              <td>63830*********3254</td>
+                              <td>N/A</td>
+                              <td style="white-space: nowrap;">7 Jan 2023</td>
+                              <td>$1,450.00 USD</td>
+                              <td>MC OG</td>
+                            </tr>
+                            <tr id="5427">
+                              <th scope="row">5427</th>
+                              <td>Discord</td>
+                              <td>10563*********71329</td>
+                              <td>87041*********9605</td>
+                              <td style="white-space: nowrap;">7 Jan 2023</td>
+                              <td>$950.00 USD</td>
+                              <td>MC "Ha***ny"</td>
+                            </tr>
+                            <tr id="5426">
+                              <th scope="row">5426</th>
+                              <td>Discord</td>
+                              <td>94762*********1904</td>
+                              <td>10151*********50078</td>
+                              <td style="white-space: nowrap;">7 Jan 2023</td>
+                              <td>$350.00 USD</td>
+                              <td>2015 Cape</td>
+                            </tr>
+                            <tr id="5425">
+                              <th scope="row">5425</th>
+                              <td>Discord</td>
+                              <td>52871*********5281</td>
+                              <td>72274*********3482</td>
+                              <td style="white-space: nowrap;">7 Jan 2023</td>
+                              <td>$300.00 USD</td>
+                              <td>Hypixel Stats Account</td>
+                            </tr>
+                            <tr id="5424">
+                              <th scope="row">5424</th>
+                              <td>Discord</td>
+                              <td>91908*********9073</td>
+                              <td>10342*********71274</td>
+                              <td style="white-space: nowrap;">7 Jan 2023</td>
+                              <td>$200.00 USD</td>
+                              <td>Hypixel Stats Account</td>
+                            </tr>
+                            <tr id="5423">
+                              <th scope="row">5423</th>
+                              <td>Discord</td>
+                              <td>10340*********65088</td>
+                              <td>10360*********42667</td>
+                              <td style="white-space: nowrap;">7 Jan 2023</td>
+                              <td>$550.00 USD</td>
+                              <td>2013 Cape</td>
+                            </tr>
+                            <tr id="5422">
+                              <th scope="row">5422</th>
+                              <td>Discord</td>
+                              <td>75165*********1504</td>
+                              <td>10561*********23590</td>
+                              <td style="white-space: nowrap;">7 Jan 2023</td>
+                              <td>$1,400.00 USD</td>
+                              <td>2012, 2015 Cape</td>
+                            </tr>
+                            <tr id="5421">
+                              <th scope="row">5421</th>
+                              <td>Discord</td>
+                              <td>10585*********70343</td>
+                              <td>24690*********7088</td>
+                              <td style="white-space: nowrap;">7 Jan 2023</td>
+                              <td>$1,200.00 USD</td>
+                              <td>MC "P**y"</td>
+                            </tr>
+                            <tr id="5420">
+                              <th scope="row">5420</th>
+                              <td>Discord</td>
+                              <td>81477*********1499</td>
+                              <td>10563*********71329</td>
+                              <td style="white-space: nowrap;">7 Jan 2023</td>
+                              <td>$1,500.00 USD</td>
+                              <td>MC "Ra***l"</td>
+                            </tr>
+                            <tr id="5419">
+                              <th scope="row">5419</th>
+                              <td>Discord</td>
+                              <td>69759*********5028</td>
+                              <td>93684*********6371</td>
+                              <td style="white-space: nowrap;">6 Jan 2023</td>
+                              <td>$425.00 USD</td>
+                              <td>MC "He***d"</td>
+                            </tr>
+                            <tr id="5418">
+                              <th scope="row">5418</th>
+                              <td>Discord</td>
+                              <td>88276*********1659</td>
+                              <td>17947*********7744</td>
+                              <td style="white-space: nowrap;">6 Jan 2023</td>
+                              <td>$7,600.00 USD</td>
+                              <td>MC OG</td>
+                            </tr>
+                            <tr id="5417">
+                              <th scope="row">5417</th>
+                              <td>Discord</td>
+                              <td>89388*********2293</td>
+                              <td>10215*********97226</td>
+                              <td style="white-space: nowrap;">6 Jan 2023</td>
+                              <td>$575.00 USD</td>
+                              <td>MC "Pr***st"</td>
+                            </tr>
+                            <tr id="5416">
+                              <th scope="row">5416</th>
+                              <td>Discord</td>
+                              <td>10446*********67138</td>
+                              <td>33722*********8162</td>
+                              <td style="white-space: nowrap;">6 Jan 2023</td>
+                              <td>$400.00 USD</td>
+                              <td>MC "Ann*****te"</td>
+                            </tr>
+                            <tr id="5415">
+                              <th scope="row">5415</th>
+                              <td>Discord</td>
+                              <td>95409*********4108</td>
+                              <td>10425*********54504</td>
+                              <td style="white-space: nowrap;">6 Jan 2023</td>
+                              <td>$410.00 USD</td>
+                              <td>2015 Cape</td>
+                            </tr>
+                            <tr id="5414">
+                              <th scope="row">5414</th>
+                              <td>Discord</td>
+                              <td>10383*********27962</td>
+                              <td>10584*********18148</td>
+                              <td style="white-space: nowrap;">6 Jan 2023</td>
+                              <td>$100.00 USD</td>
+                              <td>Hypixel Stats Account</td>
+                            </tr>
+                            <tr id="5413">
+                              <th scope="row">5413</th>
+                              <td>Discord</td>
+                              <td>33722*********8162</td>
+                              <td>10532*********55818</td>
+                              <td style="white-space: nowrap;">6 Jan 2023</td>
+                              <td>$250.00 USD</td>
+                              <td>MC "Se****ate" for "EQ***S" &amp; $180</td>
+                            </tr>
+                            <tr id="5412">
+                              <th scope="row">5412</th>
+                              <td>Discord</td>
+                              <td>10154*********69032</td>
+                              <td>23187*********6979</td>
+                              <td style="white-space: nowrap;">6 Jan 2023</td>
+                              <td>$500.00 USD</td>
+                              <td>MC "Al****ate" for "Re****ect" &amp; $175</td>
+                            </tr>
+                            <tr id="5411">
+                              <th scope="row">5411</th>
+                              <td>Discord</td>
+                              <td>90843*********0064</td>
+                              <td>86879*********8362</td>
+                              <td style="white-space: nowrap;">6 Jan 2023</td>
+                              <td>$700.00 USD</td>
+                              <td>MC "Ch****tte"</td>
+                            </tr>
+                            <tr id="5410">
+                              <th scope="row">5410</th>
+                              <td>Discord</td>
+                              <td>58677*********7169</td>
+                              <td>10561*********20537</td>
+                              <td style="white-space: nowrap;">5 Jan 2023</td>
+                              <td>$500.00 USD</td>
+                              <td>MC "Pa***ka"</td>
+                            </tr>
+                            <tr id="5409">
+                              <th scope="row">5409</th>
+                              <td>Discord</td>
+                              <td>32699*********1408</td>
+                              <td>95153*********6809</td>
+                              <td style="white-space: nowrap;">5 Jan 2023</td>
+                              <td>$75.00 USD</td>
+                              <td>Hypixel Stats Account</td>
+                            </tr>
+                            <tr id="5408">
+                              <th scope="row">5408</th>
+                              <td>Discord</td>
+                              <td>55619*********5107</td>
+                              <td>50773*********2096</td>
+                              <td style="white-space: nowrap;">5 Jan 2023</td>
+                              <td>$200.00 USD</td>
+                              <td>MC "M**ik"</td>
+                            </tr>
+                            <tr id="5407">
+                              <th scope="row">5407</th>
+                              <td>Discord</td>
+                              <td>10340*********65088</td>
+                              <td>80585*********3696</td>
+                              <td style="white-space: nowrap;">5 Jan 2023</td>
+                              <td>$450.00 USD</td>
+                              <td>2016 Cape for 2015 Cape &amp; $160</td>
+                            </tr>
+                            <tr id="5406">
+                              <th scope="row">5406</th>
+                              <td>Discord</td>
+                              <td>10588*********54156</td>
+                              <td>36625*********6672</td>
+                              <td style="white-space: nowrap;">5 Jan 2023</td>
+                              <td>$4,500.00 USD</td>
+                              <td>MC OG</td>
+                            </tr>
+                            <tr id="5405">
+                              <th scope="row">5405</th>
+                              <td>Discord</td>
+                              <td>31773*********9162</td>
+                              <td>10561*********01834</td>
+                              <td style="white-space: nowrap;">5 Jan 2023</td>
+                              <td>$550.00 USD</td>
+                              <td>MC "G**h"</td>
+                            </tr>
+                            <tr id="5404">
+                              <th scope="row">5404</th>
+                              <td>Discord</td>
+                              <td>85338*********9668</td>
+                              <td>10401*********42878</td>
+                              <td style="white-space: nowrap;">5 Jan 2023</td>
+                              <td>$300.00 USD</td>
+                              <td>MC "Ju****ic"</td>
+                            </tr>
+                            <tr id="5403">
+                              <th scope="row">5403</th>
+                              <td>Discord</td>
+                              <td>67685*********1200</td>
+                              <td>10561*********28607</td>
+                              <td style="white-space: nowrap;">5 Jan 2023</td>
+                              <td>$530.00 USD</td>
+                              <td>2012 Cape</td>
+                            </tr>
+                            <tr id="5402">
+                              <th scope="row">5402</th>
+                              <td>Discord</td>
+                              <td>60910*********3903</td>
+                              <td>10561*********28607</td>
+                              <td style="white-space: nowrap;">5 Jan 2023</td>
+                              <td>$485.00 USD</td>
+                              <td>2012 Cape</td>
+                            </tr>
+                            <tr id="5401">
+                              <th scope="row">5401</th>
+                              <td>Discord</td>
+                              <td>10524*********55112</td>
+                              <td>58420*********9027</td>
+                              <td style="white-space: nowrap;">5 Jan 2023</td>
+                              <td>$575.00 USD</td>
+                              <td>2016 Cape</td>
+                            </tr>
+                            <tr id="5400">
+                              <th scope="row">5400</th>
+                              <td>Discord</td>
+                              <td>80994*********2848</td>
+                              <td>36225*********8251</td>
+                              <td style="white-space: nowrap;">5 Jan 2023</td>
+                              <td>$70.00 USD</td>
+                              <td>MC "***"</td>
+                            </tr>
+                            <tr id="5399">
+                              <th scope="row">5399</th>
+                              <td>Discord</td>
+                              <td>79764*********2128</td>
+                              <td>94530*********9122</td>
+                              <td style="white-space: nowrap;">5 Jan 2023</td>
+                              <td>$400.00 USD</td>
+                              <td>Hypixel Stats Account</td>
+                            </tr>
+                            <tr id="5398">
+                              <th scope="row">5398</th>
+                              <td>Discord</td>
+                              <td>10350*********42555</td>
+                              <td>10363*********40968</td>
+                              <td style="white-space: nowrap;">5 Jan 2023</td>
+                              <td>$1,000.00 USD</td>
+                              <td>MC "Bo***r"</td>
+                            </tr>
+                            <tr id="5397">
+                              <th scope="row">5397</th>
+                              <td>Discord</td>
+                              <td>10411*********26442</td>
+                              <td>73786*********2880</td>
+                              <td style="white-space: nowrap;">5 Jan 2023</td>
+                              <td>$1,000.00 USD</td>
+                              <td>2015, 2016 Cape</td>
+                            </tr>
+                            <tr id="5396">
+                              <th scope="row">5396</th>
+                              <td>Discord</td>
+                              <td>98370*********4592</td>
+                              <td>10530*********73141</td>
+                              <td style="white-space: nowrap;">5 Jan 2023</td>
+                              <td>$3,900.00 USD</td>
+                              <td>MC OG</td>
+                            </tr>
+                            <tr id="5395">
+                              <th scope="row">5395</th>
+                              <td>Discord</td>
+                              <td>77152*********7531</td>
+                              <td>53778*********6144</td>
+                              <td style="white-space: nowrap;">4 Jan 2023</td>
+                              <td>$250.00 USD</td>
+                              <td>Hypixel Stats Account</td>
+                            </tr>
+                            <tr id="5394">
+                              <th scope="row">5394</th>
+                              <td>Discord</td>
+                              <td>36734*********3259</td>
+                              <td>31530*********1298</td>
+                              <td style="white-space: nowrap;">4 Jan 2023</td>
+                              <td>$350.00 USD</td>
+                              <td>MC "Hi***p"</td>
+                            </tr>
+                            <tr id="5393">
+                              <th scope="row">5393</th>
+                              <td>Discord</td>
+                              <td>87658*********3994</td>
+                              <td>10566*********56473</td>
+                              <td style="white-space: nowrap;">4 Jan 2023</td>
+                              <td>$200.00 USD</td>
+                              <td>Hypixel Stats Account</td>
+                            </tr>
+                            <tr id="5392">
+                              <th scope="row">5392</th>
+                              <td>Discord</td>
+                              <td>43129*********6113</td>
+                              <td>85924*********0218</td>
+                              <td style="white-space: nowrap;">4 Jan 2023</td>
+                              <td>$750.00 USD</td>
+                              <td>MC "Se****ce"</td>
+                            </tr>
+                            <tr id="5391">
+                              <th scope="row">5391</th>
+                              <td>Discord</td>
+                              <td>10561*********20537</td>
+                              <td>97409*********1796</td>
+                              <td style="white-space: nowrap;">4 Jan 2023</td>
+                              <td>$330.00 USD</td>
+                              <td>MC "***"</td>
+                            </tr>
+                            <tr id="5390">
+                              <th scope="row">5390</th>
+                              <td>Discord</td>
+                              <td>59384*********5026</td>
+                              <td>93506*********9856</td>
+                              <td style="white-space: nowrap;">3 Jan 2023</td>
+                              <td>$150.00 USD</td>
+                              <td>MC "Pri*****se"</td>
+                            </tr>
+                            <tr id="5389">
+                              <th scope="row">5389</th>
+                              <td>Discord</td>
+                              <td>32872*********4449</td>
+                              <td>42622*********9185</td>
+                              <td style="white-space: nowrap;">3 Jan 2023</td>
+                              <td>$450.00 USD</td>
+                              <td>Valorant Account</td>
+                            </tr>
+                            <tr id="5388">
+                              <th scope="row">5388</th>
+                              <td>Discord</td>
+                              <td>43010*********8640</td>
+                              <td>18695*********0848</td>
+                              <td style="white-space: nowrap;">3 Jan 2023</td>
+                              <td>$1,000.00 USD</td>
+                              <td>MC "***"</td>
+                            </tr>
+                            <tr id="5387">
+                              <th scope="row">5387</th>
+                              <td>Discord</td>
+                              <td>98534*********8539</td>
+                              <td>87880*********1648</td>
+                              <td style="white-space: nowrap;">3 Jan 2023</td>
+                              <td>$205.00 USD</td>
+                              <td>Hypixel Stats Account</td>
+                            </tr>
+                            <tr id="5386">
+                              <th scope="row">5386</th>
+                              <td>Discord</td>
+                              <td>71932*********1685</td>
+                              <td>10401*********42878</td>
+                              <td style="white-space: nowrap;">3 Jan 2023</td>
+                              <td>$400.00 USD</td>
+                              <td>2013 Cape for MC "Sl****ady" &amp; $130</td>
+                            </tr>
+                            <tr id="5385">
+                              <th scope="row">5385</th>
+                              <td>Discord</td>
+                              <td>N/A</td>
+                              <td>N/A</td>
+                              <td style="white-space: nowrap;">3 Jan 2023</td>
+                              <td>$2,150.00 USD</td>
+                              <td>Special Cape</td>
+                            </tr>
+                            <tr id="5384">
+                              <th scope="row">5384</th>
+                              <td>Discord</td>
+                              <td>18695*********0848</td>
+                              <td>96283*********9966</td>
+                              <td style="white-space: nowrap;">3 Jan 2023</td>
+                              <td>$1,300.00 USD</td>
+                              <td>MC "N**ro" &amp; 2011 Cape</td>
+                            </tr>
+                            <tr id="5383">
+                              <th scope="row">5383</th>
+                              <td>Discord</td>
+                              <td>10340*********65088</td>
+                              <td>24690*********7088</td>
+                              <td style="white-space: nowrap;">3 Jan 2023</td>
+                              <td>$1,500.00 USD</td>
+                              <td>MC "C**fy" (2015) for TT "s**p" &amp; $1300</td>
+                            </tr>
+                            <tr id="5382">
+                              <th scope="row">5382</th>
+                              <td>Discord</td>
+                              <td>85705*********4926</td>
+                              <td>96283*********9966</td>
+                              <td style="white-space: nowrap;">3 Jan 2023</td>
+                              <td>$2,800.00 USD</td>
+                              <td>2013, 2015, 2016 Cape</td>
+                            </tr>
+                            <tr id="5381">
+                              <th scope="row">5381</th>
+                              <td>Discord</td>
+                              <td>10544*********99513</td>
+                              <td>10591*********48223</td>
+                              <td style="white-space: nowrap;">3 Jan 2023</td>
+                              <td>$250.00 USD</td>
+                              <td>MC "A**ne"</td>
+                            </tr>
+                            <tr id="5380">
+                              <th scope="row">5380</th>
+                              <td>Discord</td>
+                              <td>10561*********23590</td>
+                              <td>10354*********88009</td>
+                              <td style="white-space: nowrap;">3 Jan 2023</td>
+                              <td>$1,200.00 USD</td>
+                              <td>MC "P**r"</td>
+                            </tr>
+                            <tr id="5379">
+                              <th scope="row">5379</th>
+                              <td>Discord</td>
+                              <td>73926*********3995</td>
+                              <td>77944*********9749</td>
+                              <td style="white-space: nowrap;">3 Jan 2023</td>
+                              <td>$138.00 USD</td>
+                              <td>Hypixel Guild</td>
+                            </tr>
+                            <tr id="5378">
+                              <th scope="row">5378</th>
+                              <td>Discord</td>
+                              <td>39954*********7217</td>
+                              <td>96283*********9966</td>
+                              <td style="white-space: nowrap;">3 Jan 2023</td>
+                              <td>$2,250.00 USD</td>
+                              <td>MC Invalid</td>
+                            </tr>
+                            <tr id="5377">
+                              <th scope="row">5377</th>
+                              <td>Discord</td>
+                              <td>81936*********1816</td>
+                              <td>49096*********9319</td>
+                              <td style="white-space: nowrap;">3 Jan 2023</td>
+                              <td>$750.00 USD</td>
+                              <td>2011 Cape</td>
+                            </tr>
+                            <tr id="5376">
+                              <th scope="row">5376</th>
+                              <td>Discord</td>
+                              <td>N/A</td>
+                              <td>N/A</td>
+                              <td style="white-space: nowrap;">3 Jan 2023</td>
+                              <td>$67,500.00 USD</td>
+                              <td>Social OG</td>
+                            </tr>
+                            <tr id="5375">
+                              <th scope="row">5375</th>
+                              <td>Discord</td>
+                              <td>N/A</td>
+                              <td>N/A</td>
+                              <td style="white-space: nowrap;">2 Jan 2023</td>
+                              <td>$2,300.00 USD</td>
+                              <td>Special Cape</td>
+                            </tr>
+                          </tbody>
+                          
+                    </table>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <script src="../script.js"></script>
+</body>
+</html>    
